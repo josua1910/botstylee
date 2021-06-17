@@ -76,16 +76,22 @@ let handler  = async (m, { conn, usedPrefix: _p, DevMode }) => {
           if (menu.help) groups[tag].push(menu)
     }
     conn.menu = conn.menu ? conn.menu : {}
-    let before = conn.menu.before || ` ┌──「 ${conn.user.name} 」
-│============================
-├ Nama : %name!
-├ Tanggal: *%week %weton, %date*
-├ Waktu: *%time*
-├ Uptime: *%uptime (%muptime)*
-│============================`
-    let header = conn.menu.header || '◪「 %category 」'
-    let body   = conn.menu.body   || '├❏  %cmd%islimit'
-    let footer = conn.menu.footer || '\n'
+    let before = conn.menu.before || ` ┏ ┅ ━━━━「 ${conn.user.name} 」━━━ ┅ ━
+
+┣ ┅ ━━━━━━━━━━━━━━━━━━━━ ┅ ━
+┃
+┃ ❖ Hai %name!
+┃
+┃ ❖ *Name:* %name
+┃ ❖ *Hari:* %week %weton
+┃ ❖ *Tanggal:* %date
+┃ ❖ *Tanggal Islam:* %dateIslamic
+┃ ❖ *Waktu:* %time WIB
+┃ ❖  Uptime: *%uptime*
+┗ ┅ ━━━━━━━━━━━━━━━━━━━━ ┅ ━`
+    let header = conn.menu.header || '┏ ┅ ━━━━━━「 %category 」━━━━━━━ ┅ ━'
+    let body   = conn.menu.body   || '┃ ❖ %cmd%islimit'
+    let footer = conn.menu.footer || '┗ ┅ ━━━━━━━━━━━━━━━━━━━━━━━━━ ┅ ━\n'
     let after  = conn.menu.after  || '\n'
     let _text  = before + '\n'
     for (let tag in groups) {
