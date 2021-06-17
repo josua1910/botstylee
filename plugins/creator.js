@@ -1,6 +1,6 @@
 function handler(m) {
   // Ini cuma contoh, jgn di uncomment -_-
-  // F this.sendContact(m.chat, '6282114499086', 'Benniismael', m)
+  // F this.sendContact(m.chat, '6282114086', 'Benniismael', m)
   this.sendContact(m.chat, '6282114499086', 'Benniismael', m)
 }
 handler.help = ['owner', 'creator']
